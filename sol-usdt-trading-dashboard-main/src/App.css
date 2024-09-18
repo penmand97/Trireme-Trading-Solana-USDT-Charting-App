@@ -1,0 +1,143 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  background-color: #131722;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.timeframe-selector {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.timeframe-selector button {
+  background-color: #1e222d;
+  border: 1px solid #363c4e;
+  color: #e0e0e0;
+  padding: 0.2rem 0.4rem;
+  margin: 0 0.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 0.8rem;
+}
+
+.timeframe-selector button:hover,
+.timeframe-selector button.active {
+  background-color: #2962ff;
+  color: white;
+}
+
+.dashboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.candlestick-chart {
+  flex: 3;
+  width: 100%;
+  padding: 0.25rem;
+  min-height: 400px; /* Add this line to ensure minimum height */
+}
+
+.order-book {
+  flex: 1;
+  width: 100%;
+  padding: 0.25rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-book h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.order-book-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.order-book-tables {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100% - 60px); /* Adjust based on your header and summary height */
+}
+
+.order-book table {
+  width: 49%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.8rem;
+}
+
+.order-book th,
+.order-book td {
+  padding: 4px;
+  text-align: right;
+  border-bottom: 1px solid #363c4e;
+}
+
+.order-book th {
+  background-color: #1e222d;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.price.bid {
+  color: #26a69a;
+}
+
+.price.ask {
+  color: #ef5350;
+}
+
+.error {
+  color: #ef5350;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .order-book-tables {
+    flex-direction: column;
+  }
+
+  .order-book table {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
